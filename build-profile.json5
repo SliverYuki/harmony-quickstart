@@ -1,6 +1,20 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/liyanyu/.ohos/config/default_harmony-quickstart_CgfM54QWyk1PJGdPKyTPPYONwbOfuTCLVvlmwy_N1DQ=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B7347F19A10CA04B1BC140E6E79C1E0A19A4B4AD60EF9CD1FE0F5E0B7DF8A6226A1311560623859",
+          "profile": "/Users/liyanyu/.ohos/config/default_harmony-quickstart_CgfM54QWyk1PJGdPKyTPPYONwbOfuTCLVvlmwy_N1DQ=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/liyanyu/.ohos/config/default_harmony-quickstart_CgfM54QWyk1PJGdPKyTPPYONwbOfuTCLVvlmwy_N1DQ=.p12",
+          "storePassword": "0000001B9033C0D567D2FA1830F2CEB3237DA6540AE61BA40A4D9E0A7350C0296B047F0257E2F58ABC8E6C"
+        }
+      }
+    ],
     "products": [
       {
         "name": "default",
@@ -27,8 +41,8 @@
   },
   "modules": [
     {
-      "name": "entry",
-      "srcPath": "./entry",
+      "name": "default",
+      "srcPath": "./products/default",
       "targets": [
         {
           "name": "default",
@@ -37,6 +51,26 @@
           ]
         }
       ]
+    },
+    {
+      "name": "quickstart",
+      "srcPath": "./features/quickstart",
+    },
+    {
+      "name": "map",
+      "srcPath": "./features/map",
+    },
+    {
+      "name": "learning",
+      "srcPath": "./features/learning",
+    },
+    {
+      "name": "utils",
+      "srcPath": "./commons/utils",
+    },
+    {
+      "name": "uicomponents",
+      "srcPath": "./commons/uicomponents",
     }
   ]
 }
