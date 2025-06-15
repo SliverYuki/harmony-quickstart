@@ -1,5 +1,5 @@
 import { ArticleClass } from '../model/ArticleClass'
-import { bufferToString } from '../util/BufferUtil'
+import { bufferToString } from 'utils/src/main/ets/helpers/BufferUtil'
 
 @Component
 struct EnablementItem {

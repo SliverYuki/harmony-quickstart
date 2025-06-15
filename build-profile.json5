@@ -5,15 +5,15 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "/Users/liyanyu/.ohos/config/default_harmony-quickstart_CgfM54QWyk1PJGdPKyTPPYONwbOfuTCLVvlmwy_N1DQ=.cer",
+          "certpath": "C:\\Users\\Adrian Lee\\.ohos\\config\\legion_harmony-quickstart_q6PO9ZOy-u483lR06jtvdIj7K7Pi9PNDmYpnJskJJ2M=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001B7347F19A10CA04B1BC140E6E79C1E0A19A4B4AD60EF9CD1FE0F5E0B7DF8A6226A1311560623859",
-          "profile": "/Users/liyanyu/.ohos/config/default_harmony-quickstart_CgfM54QWyk1PJGdPKyTPPYONwbOfuTCLVvlmwy_N1DQ=.p7b",
+          "keyPassword": "0000001BFFD5DAC56FDDE76E244F97CA6E28E8920715440687C42E844F33080D563C7733C1156567C70718",
+          "profile": "C:\\Users\\Adrian Lee\\.ohos\\config\\legion_harmony-quickstart_q6PO9ZOy-u483lR06jtvdIj7K7Pi9PNDmYpnJskJJ2M=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/liyanyu/.ohos/config/default_harmony-quickstart_CgfM54QWyk1PJGdPKyTPPYONwbOfuTCLVvlmwy_N1DQ=.p12",
-          "storePassword": "0000001B9033C0D567D2FA1830F2CEB3237DA6540AE61BA40A4D9E0A7350C0296B047F0257E2F58ABC8E6C"
+          "storeFile": "C:\\Users\\Adrian Lee\\.ohos\\config\\legion_harmony-quickstart_q6PO9ZOy-u483lR06jtvdIj7K7Pi9PNDmYpnJskJJ2M=.p12",
+          "storePassword": "0000001B71F1B89C80BD9811F8D108BEABF227F75982D3305B7F085452C0FAF509E639A7C00145941C07FB"
         }
-      }
+      },
     ],
     "products": [
       {

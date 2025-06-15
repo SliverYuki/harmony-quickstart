@@ -1,5 +1,5 @@
 import { BannerClass } from "../model/BannerClass"
-import { bufferToString } from "../util/BufferUtil"
+import { bufferToString } from "utils/src/main/ets/helpers/BufferUtil"
 
 @Preview
 @Component

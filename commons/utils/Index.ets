@@ -1,1 +1,1 @@
-export { MainPage } from './src/main/ets/components/MainPage';
+export { bufferToString } from './src/main/ets/helpers/BufferUtil'

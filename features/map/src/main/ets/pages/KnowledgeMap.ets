@@ -1,3 +1,5 @@
+import { bufferToString } from "utils/src/main/ets/helpers/BufferUtil"
+import { Section } from "../model/KnowledgeClass";
 import { NavBarItemType } from "../model/NavBarClass";
 import { NavBarItem } from "../view/NavBarItem";
 
@@ -15,6 +17,12 @@ export struct KnowledgeMap {
     { order: '06', title: '商业变现' },
     { order: '07', title: '更多' }
   ]
+
+  @State sections: Array<Section> = []
+
+  aboutToAppear(): void {
+    this.getSectionsDataFromJson()
+  }
 
   build() {
     Scroll() {
@@ -60,5 +68,15 @@ export struct KnowledgeMap {
     .constraintSize({ minHeight: '100%' })
     .edgeEffect(EdgeEffect.Spring)
     .backgroundColor('#F3F5F7')
+  }
+
+  getSectionsDataFromJson() {
+    const context = this.getUIContext().getHostContext()
+    context?.resourceManager.getRawFileContent('MapData.json')
+      .then(value => {
+        let res = bufferToString(value)
+
+        this.sections = JSON.parse(res) as Array<Section>
+      })
   }
 }

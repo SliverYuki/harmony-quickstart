@@ -1,6 +1,5 @@
 import { NavBarItemType } from "../model/NavBarClass"
 
-@Preview
 @Component
 export struct NavBarItem {
   @Prop navBarItem:NavBarItemType
