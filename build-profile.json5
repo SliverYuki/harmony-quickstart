@@ -1,20 +1,5 @@
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "C:\\Users\\Adrian Lee\\.ohos\\config\\legion_harmony-quickstart_q6PO9ZOy-u483lR06jtvdIj7K7Pi9PNDmYpnJskJJ2M=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001BFFD5DAC56FDDE76E244F97CA6E28E8920715440687C42E844F33080D563C7733C1156567C70718",
-          "profile": "C:\\Users\\Adrian Lee\\.ohos\\config\\legion_harmony-quickstart_q6PO9ZOy-u483lR06jtvdIj7K7Pi9PNDmYpnJskJJ2M=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\Adrian Lee\\.ohos\\config\\legion_harmony-quickstart_q6PO9ZOy-u483lR06jtvdIj7K7Pi9PNDmYpnJskJJ2M=.p12",
-          "storePassword": "0000001B71F1B89C80BD9811F8D108BEABF227F75982D3305B7F085452C0FAF509E639A7C00145941C07FB"
-        }
-      },
-    ],
     "products": [
       {
         "name": "default",
@@ -32,10 +17,25 @@
     ],
     "buildModeSet": [
       {
-        "name": "debug",
+        "name": "debug"
       },
       {
         "name": "release"
+      }
+    ],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/liyanyu/.ohos/config/default_QuickStart_Rf8bYlR7A3Bq0-V4WGW0uazoEf1pdHKwv_rjvSmfKzc=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B50AC36AE71A5435FE9C61B8DE4E4B1F9B8B2DF464420000C0C99FE05881DBD16F60B9310DF1C94",
+          "profile": "/Users/liyanyu/.ohos/config/default_QuickStart_Rf8bYlR7A3Bq0-V4WGW0uazoEf1pdHKwv_rjvSmfKzc=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/liyanyu/.ohos/config/default_QuickStart_Rf8bYlR7A3Bq0-V4WGW0uazoEf1pdHKwv_rjvSmfKzc=.p12",
+          "storePassword": "0000001B0F0ACB3A8B802B470FD02CFA205ED5B0FF0208907FE28644B6D2F920865CDC817199367BF03F38"
+        }
       }
     ]
   },
