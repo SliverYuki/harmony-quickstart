@@ -3,6 +3,9 @@ import { NavBarItemType } from "../model/NavBarClass"
 @Component
 export struct NavBarItem {
   @Prop navBarItem:NavBarItemType
+  @Consume('knowledgeMapPageStack') knowledgeMapPageStack: NavPathStack
+
+  @Link currentNavBarIndex: number
 
   build() {
     Row() {
@@ -35,6 +38,10 @@ export struct NavBarItem {
     .borderRadius(16)
     .alignItems(VerticalAlign.Center)
     .padding({ left: 12, right: 12 })
-    .backgroundColor('#F1F3F5')
+    .backgroundColor(this.currentNavBarIndex === Number(this.navBarItem.order) - 1 ? '#1A0A59F7' : '#F1F3F5')
+    .onClick(() => {
+      this.knowledgeMapPageStack.pushPath({ name: 'KnowledgeMapContent' })
+      this.currentNavBarIndex = Number(this.navBarItem.order) - 1
+    })
   }
 }
