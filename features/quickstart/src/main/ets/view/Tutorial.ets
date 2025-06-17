@@ -51,6 +51,8 @@ struct TutorialItem {
 export struct TutorialView {
   @State tutorialList: Array<ArticleClass> = []
 
+  @Consume('ArticlePathStack') articlePathStack: NavPathStack
+
   aboutToAppear(): void {
     this.getTutorialDataFromJson()
   }
@@ -70,6 +72,9 @@ export struct TutorialView {
           ListItem() {
             TutorialItem({ tutorialItem: item })
           }
+          .onClick(() => {
+            this.articlePathStack.pushPathByName('articleDetail', item)
+          })
         }, (item: ArticleClass, index: number) => item.id)
       }
       .scrollBar(BarState.Off)

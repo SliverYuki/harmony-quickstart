@@ -6,6 +6,8 @@ import { bufferToString } from "utils/src/main/ets/helpers/BufferUtil"
 export struct Banner {
   @State BannerList: Array<BannerClass> = []
 
+  @Consume('ArticlePathStack') articlePathStack: NavPathStack
+
   // 组件实例创建后，渲染前执行
   aboutToAppear(): void {
     this.getBannerDataFromJson()
@@ -19,6 +21,9 @@ export struct Banner {
           .width('100%')
           .padding({ left: 16, right: 16, top: 10 })
           .borderRadius(16)
+          .onClick(() => {
+            this.articlePathStack.pushPathByName('bannerDetail', item)
+          })
       }, (item: BannerClass) => item.id)
     }
     .autoPlay(true)

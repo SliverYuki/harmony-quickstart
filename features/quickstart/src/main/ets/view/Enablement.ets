@@ -48,6 +48,8 @@ struct EnablementItem {
 export struct EnablementView {
   @State EnablementList:Array<ArticleClass> = []
 
+  @Consume('ArticlePathStack') articlePathStack: NavPathStack
+
   aboutToAppear(): void {
     this.getEnablementDataFromJson()
   }
@@ -68,6 +70,9 @@ export struct EnablementView {
           GridItem() {
             EnablementItem({ enablementItem: item })
           }
+          .onClick(() => {
+            this.articlePathStack.pushPathByName('articleDetail', item)
+          })
         }, (item: ArticleClass, index: number) => item.id)
       }
       .width('100%')
