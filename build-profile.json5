@@ -28,13 +28,26 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "/Users/liyanyu/.ohos/config/default_QuickStart_Rf8bYlR7A3Bq0-V4WGW0uazoEf1pdHKwv_rjvSmfKzc=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B50AC36AE71A5435FE9C61B8DE4E4B1F9B8B2DF464420000C0C99FE05881DBD16F60B9310DF1C94",
-          "profile": "/Users/liyanyu/.ohos/config/default_QuickStart_Rf8bYlR7A3Bq0-V4WGW0uazoEf1pdHKwv_rjvSmfKzc=.p7b",
+          "storeFile": "./.keystore/QuickStart_staging.p12",
+          "storePassword": "00000018CB11493B36C6AD26DDCB3BB32A4E49B9DFBA882424CA9418A37DA0D22265CA5D202631F2",
+          "keyAlias": "QuickStart_staging",
+          "keyPassword": "0000001880BE4C1CE4F03334BB7D8C27D240C624D71567F509B84A34829732470C303899CDF53ACB",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/liyanyu/.ohos/config/default_QuickStart_Rf8bYlR7A3Bq0-V4WGW0uazoEf1pdHKwv_rjvSmfKzc=.p12",
-          "storePassword": "0000001B0F0ACB3A8B802B470FD02CFA205ED5B0FF0208907FE28644B6D2F920865CDC817199367BF03F38"
+          "profile": "./.keystore/QuickStart_stagingRelease.p7b",
+          "certpath": "./.keystore/quickstart_staging.cer"
+        }
+      },
+      {
+        "name": "dev",
+        "type": "HarmonyOS",
+        "material": {
+          "storeFile": "./.keystore/QuickStart_staging.p12",
+          "storePassword": "00000018EB9FD0DD2DF3D25246CE47A6BB7AC3BBD65A2D2ACC7D50FD987E2A93DD7EA5F26D58B8B2",
+          "keyAlias": "QuickStart_staging",
+          "keyPassword": "000000187F3BAD9E06CB2A162C136E9043742DE2FD618D2B27FEA25277D2108868BFB28EBDEE116D",
+          "signAlg": "SHA256withECDSA",
+          "profile": "./.keystore/QuickStart_devDebug.p7b",
+          "certpath": "./.keystore/quickstart_dev.cer"
         }
       }
     ]
