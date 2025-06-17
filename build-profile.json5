@@ -3,7 +3,7 @@
     "products": [
       {
         "name": "default",
-        "signingConfig": "default",
+        "signingConfig": "release",
         "targetSdkVersion": "5.1.0(18)",
         "compatibleSdkVersion": "5.0.5(17)",
         "runtimeOS": "HarmonyOS",
@@ -48,6 +48,19 @@
           "signAlg": "SHA256withECDSA",
           "profile": "./.keystore/QuickStart_devDebug.p7b",
           "certpath": "./.keystore/quickstart_dev.cer"
+        }
+      },
+      {
+        "name": "release",
+        "type": "HarmonyOS",
+        "material": {
+          "storeFile": "./.keystore/QuickStart_staging.p12",
+          "storePassword": "000000184A51750186276948C0A7868581D7749527C9828790AA641B5256E30A7B151361F09B0179",
+          "keyAlias": "QuickStart_staging",
+          "keyPassword": "00000018D51F56AFEE469DCCE2A7E543DC36E468DFC26C5B1F73EF26046E1441DF9270F72681CA65",
+          "signAlg": "SHA256withECDSA",
+          "profile": "./.keystore/QuickStart_releaseRelease.p7b",
+          "certpath": "./.keystore/quickstart_staging.cer"
         }
       }
     ]
