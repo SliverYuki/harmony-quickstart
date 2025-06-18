@@ -52,6 +52,9 @@ struct Index {
     .onClick(() => {
       this.currentIndex = targetIndex
       this.tabsController.changeIndex(targetIndex)
+      // 通知 Ability 实例，Tab 页切换
+      const context = this.getUIContext().getHostContext()
+      context?.eventHub.emit('TabSwitch', targetIndex)
     })
   }
 
