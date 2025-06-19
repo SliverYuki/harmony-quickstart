@@ -7,11 +7,12 @@ export struct BannerDetailPage {
 
   @State bannerDetail: BannerClass | null = null
 
-  @Consume('ArticlePathStack') articlePathStack: NavPathStack
+  // @Consume('ArticlePathStack') articlePathStack: NavPathStack
+  articlePathStack: NavPathStack | null = null
 
-  aboutToAppear(): void {
-    this.bannerDetail = this.articlePathStack.getParamByName('bannerDetail')[0] as BannerClass
-  }
+  // aboutToAppear(): void {
+  //   this.bannerDetail = this.articlePathStack.getParamByName('bannerDetail')[0] as BannerClass
+  // }
 
   build() {
     NavDestination() {
@@ -31,8 +32,12 @@ export struct BannerDetailPage {
           .layoutWeight(2)
       }
     }
-    .width('100%')
-    .height('100%')
-    .hideTitleBar(true)
+      .width('100%')
+      .height('100%')
+      .hideTitleBar(true)
+      .onReady((context: NavDestinationContext) => {
+        this.articlePathStack = context.pathStack
+        this.bannerDetail = this.articlePathStack?.getParamByName('bannerDetail')[0] as BannerClass
+      })
   }
 }

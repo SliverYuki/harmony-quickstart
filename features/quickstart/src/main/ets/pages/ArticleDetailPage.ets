@@ -5,12 +5,13 @@ import { ArticleClass } from "../model/ArticleClass";
 export struct ArticleDetailPage {
   @State articleDetail: ArticleClass | null = null
 
-  @Consume('ArticlePathStack') articlePathStack: NavPathStack
+  // @Consume('ArticlePathStack') articlePathStack: NavPathStack
+  articlePathStack: NavPathStack | null = null
 
-  aboutToAppear(): void {
-    this.articleDetail = this.articlePathStack.getParamByName('articleDetail')[0] as ArticleClass
-    console.debug('articleDetail', this.articleDetail)
-  }
+  // aboutToAppear(): void {
+  //   this.articleDetail = this.articlePathStack.getParamByName('articleDetail')[0] as ArticleClass
+  //   console.debug('articleDetail', this.articleDetail)
+  // }
 
   build() {
     NavDestination() {
@@ -21,7 +22,7 @@ export struct ArticleDetailPage {
               .width(40)
               .height(40)
               .onClick(() => {
-                this.articlePathStack.pop()
+                this.articlePathStack?.pop()
               })
 
             Row() {
@@ -49,6 +50,12 @@ export struct ArticleDetailPage {
       .padding({ left: 16, right: 16 })
     }
     .hideTitleBar(true)
+    // 使用 onReady 回调获取 Context
+    .onReady((context: NavDestinationContext) => {
+      this.articlePathStack = context.pathStack
+      this.articleDetail = this.articlePathStack.getParamByName('articleDetail')[0] as ArticleClass
+      console.debug('articleDetail', this.articleDetail)
+    })
   }
 }
 

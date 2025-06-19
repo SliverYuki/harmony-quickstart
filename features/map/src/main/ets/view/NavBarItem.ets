@@ -1,11 +1,22 @@
 import { NavBarItemType } from "../model/NavBarClass"
+import { uiObserver } from "@kit.ArkUI"
 
 @Component
 export struct NavBarItem {
   @Prop navBarItem:NavBarItemType
-  @Consume('knowledgeMapPageStack') knowledgeMapPageStack: NavPathStack
+  // @Consume('knowledgeMapPageStack') knowledgeMapPageStack: NavPathStack
+
+  knowledgeMapPageStack: NavPathStack = new NavPathStack()
 
   @Link currentNavBarIndex: number
+
+  aboutToAppear(): void {
+    // 使用 queryNavigationInfo API，向上查找最近的一个 Navigation 父节点
+    let navigationInfo: uiObserver.NavigationInfo | undefined = this.queryNavigationInfo()
+    if (navigationInfo !== undefined) {
+      this.knowledgeMapPageStack = navigationInfo.pathStack
+    }
+  }
 
   build() {
     Row() {
