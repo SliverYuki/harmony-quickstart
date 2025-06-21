@@ -11,14 +11,16 @@ const IconMap:Record<string, string> = {
 export struct KnowledgeMapContent {
   @Prop section:Section
 
+  knowledgeMapPageStack: NavPathStack | null = new NavPathStack()
+
   scroller: Scroller = new Scroller()
 
   @Builder
   KnowledgeBlockRow(knowledgeBaseItem: KnowledgeBaseItem) {
     Row() {
       Image($r(IconMap[knowledgeBaseItem.type]))
-        .width(20)
-        .height(20)
+        .width($r('app.float.base_icon_size'))
+        .height($r('app.float.base_icon_size'))
 
       Column() {
         Text(knowledgeBaseItem.title)
@@ -60,6 +62,10 @@ export struct KnowledgeMapContent {
           ListItem() {
             this.KnowledgeBlockRow(item)
           }
+          .onClick(() => {
+            // this.knowledgeMapPageStack?.pushPathByName?.('PhotoAccess', null)
+            this.knowledgeMapPageStack?.pushPathByName?.('NetworkImgAccess', null)
+          })
         }, (item: KnowledgeBaseItem) => item.title)
       }
       .backgroundColor(Color.White)
@@ -109,5 +115,9 @@ export struct KnowledgeMapContent {
         .backgroundColor('#F3F5F7')
     }
     .hideTitleBar(true)
+    // 使用 onReady 回调获取 Context
+    .onReady((context: NavDestinationContext) => {
+      this.knowledgeMapPageStack = context.pathStack
+    })
   }
 }

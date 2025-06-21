@@ -3,6 +3,8 @@ import { Section } from "../model/KnowledgeClass";
 import { NavBarItemType } from "../model/NavBarClass";
 import { NavBarItem } from "../view/NavBarItem";
 import { KnowledgeMapContent } from "./KnowledgeMapContent";
+import { NetworkImgAccess } from "./NetworkImgAccess";
+import { PhotoAccess } from "./PhotoAccess";
 
 @Component
 export struct KnowledgeMap {
@@ -29,6 +31,10 @@ export struct KnowledgeMap {
   pageMap(name: string) {
     if (name === 'KnowledgeMapContent') {
       KnowledgeMapContent({ section: this.sections[this.currentNavBarIndex] })
+    } if (name === 'PhotoAccess') {
+      PhotoAccess()
+    } if (name === 'NetworkImgAccess') {
+      NetworkImgAccess()
     }
   }
 

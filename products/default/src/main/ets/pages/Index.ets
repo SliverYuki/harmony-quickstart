@@ -1,5 +1,5 @@
 import { CourseLearning } from 'learning'
-import { KnowledgeMap, KnowledgeMapContent } from 'map'
+import { KnowledgeMap } from 'map'
 import { QuickStartPage } from 'quickstart'
 import { TabBar, TabContentType } from '../model/TabBarClass'
 
