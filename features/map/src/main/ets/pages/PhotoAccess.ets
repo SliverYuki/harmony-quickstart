@@ -9,6 +9,7 @@ export struct PhotoAccess {
     NavDestination() {
       Column() {
         Button('获取相册图片')
+          .margin({ bottom: 20 })
           .onClick(() => {
             this.getAllImage()
           })
@@ -17,11 +18,15 @@ export struct PhotoAccess {
           ForEach(this.imageDatas, (item: string) => {
             GridItem() {
               Image(item)
-                .width(200)
+                .width('100%')
+                .aspectRatio(1)
                 .objectFit(ImageFit.Cover)
             }
           }, (item: string) => item)
         }
+        .rowsGap(2)
+        .columnsGap(2)
+        .columnsTemplate('1fr 1fr 1fr')
       }
       .width('100%')
       .height('100%')

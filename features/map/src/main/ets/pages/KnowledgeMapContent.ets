@@ -64,7 +64,7 @@ export struct KnowledgeMapContent {
           }
           .onClick(() => {
             // this.knowledgeMapPageStack?.pushPathByName?.('PhotoAccess', null)
-            this.knowledgeMapPageStack?.pushPathByName?.('NetworkImgAccess', null)
+            this.knowledgeMapPageStack?.pushPathByName?.('NetworkImageAccess', null)
           })
         }, (item: KnowledgeBaseItem) => item.title)
       }

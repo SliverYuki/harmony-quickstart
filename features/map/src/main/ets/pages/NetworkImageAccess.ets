@@ -3,39 +3,38 @@ import { image } from '@kit.ImageKit'
 import { BusinessError } from '@kit.BasicServicesKit'
 
 @Component
-export struct NetworkImgAccess {
+export struct NetworkImageAccess {
   @State image: PixelMap | undefined = undefined
 
   aboutToAppear(): void {
-    console.log('NetworkImgAccess', 'appear')
+    console.log('NetworkImageAccess', 'appear')
   }
 
   build() {
     NavDestination() {
       Column() {
         Image(this.image)
-          .width(100)
-          .height(100)
+          .width('100%')
+          .objectFit(ImageFit.Contain)
 
-        Button('获取网络图片')
+        Button('获取网络图片', { stateEffect: true })
           .onClick(() => {
             this.getHttpImage()
           })
-          .width(200)
+          .margin({ top: 20 })
+
       }
-        .width('100%')
-        .height('100%')
+      .width('100%')
+      .height('100%')
     }
     .hideTitleBar(false)
-    .width('100%')
-    .height('100%')
   }
 
   getHttpImage = () => {
     let outputData: http.HttpResponse
     // 请求网络图片数据
     http.createHttp().request(
-      'https://images.unsplash.com/photo-1749838065282-32db54bed154?q=80&w=3029&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      'https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPrivate/011/111/111/0000000000011111111.20250115145226.63916047397033882432035029533674:50001231000000:2800:9E6CBEE018D9A94883E60802B6BCE40659480D2FE9CA545391FCAD53DE407D49.jpg',
       (error: BusinessError, data: http.HttpResponse) => {
         if (error) {
           console.error(`http request failed with. Code: ${error.code}, message: ${error.message}`)
@@ -49,6 +48,8 @@ export struct NetworkImgAccess {
             let imageData: ArrayBuffer = outputData.result as ArrayBuffer
             let imageSource: image.ImageSource = image.createImageSource(imageData)
 
+            console.log('get network img', JSON.stringify(imageSource))
+
             class tempSize {
               width: number = 100
               height: number = 100
@@ -59,7 +60,7 @@ export struct NetworkImgAccess {
               'editable': false, // 是否可编辑
               'pixelFormat': 3, // 像素格式
               'scaleMode': 1, // 缩略值
-              'size': { width: 100, height: 100 }
+              'size': { width: 3029, height: 1893 }
             }
 
             class tempImage {

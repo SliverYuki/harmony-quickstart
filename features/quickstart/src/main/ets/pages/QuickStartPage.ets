@@ -6,7 +6,6 @@ import { TutorialView } from '../view/Tutorial';
 import { ArticleDetailPage } from './ArticleDetailPage';
 import { BannerDetailPage } from './BannerDetailPage';
 
-@Entry
 @Component
 export struct QuickStartPage {
   @State message: string = '快速入门';
