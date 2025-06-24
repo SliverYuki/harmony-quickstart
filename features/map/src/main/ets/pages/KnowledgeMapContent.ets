@@ -7,9 +7,14 @@ const IconMap:Record<string, string> = {
   '视频教程': 'app.media.ic_video',
 }
 
+@Builder
+export function KnowledgeMapContentBuilder() {
+  KnowledgeMapContent()
+}
+
 @Component
 export struct KnowledgeMapContent {
-  @Prop section:Section
+  @State section:Section | null = null
 
   knowledgeMapPageStack: NavPathStack | null = new NavPathStack()
 
@@ -99,7 +104,7 @@ export struct KnowledgeMapContent {
             .fontWeight(400)
             .margin({ top: 12 })
 
-          ForEach(this.section.materials, (item: Material) => {
+          ForEach(this.section?.materials, (item: Material) => {
             this.KnowledgeBlock(item)
           }, (item: Material) => item.subtitle)
         }
@@ -118,6 +123,7 @@ export struct KnowledgeMapContent {
     // 使用 onReady 回调获取 Context
     .onReady((context: NavDestinationContext) => {
       this.knowledgeMapPageStack = context.pathStack
+      this.section = this.knowledgeMapPageStack.getParamByName("KnowledgeMapContent")[0] as Section
     })
   }
 }

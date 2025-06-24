@@ -18,7 +18,7 @@ export struct Banner {
       ForEach(this.BannerList, (item:BannerClass, index: number) => {
         Image($r(item.imageSrc))
           .objectFit(ImageFit.Contain)
-          .width('100%')
+          .width('90%')
           .padding({ left: 16, right: 16, top: 10 })
           .borderRadius(16)
           .onClick(() => {
@@ -28,6 +28,7 @@ export struct Banner {
     }
     .autoPlay(true)
     .loop(true)
+    .displayCount('auto')
     .indicator(
       new DotIndicator()
         .color('#1a000000')

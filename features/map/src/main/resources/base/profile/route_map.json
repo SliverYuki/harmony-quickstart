@@ -1,0 +1,22 @@
+{
+  "routerMap": [
+    {
+      "name":"KnowledgeMapContent",
+      "pageSourceFile": "src/main/ets/pages/KnowledgeMapContent.ets",
+      "buildFunction": "KnowledgeMapContentBuilder",
+      "data": {}
+    },
+    {
+      "name": "NetworkImageAccess",
+      "pageSourceFile": "src/main/ets/pages/NetworkImageAccess.ets",
+      "buildFunction": "NetworkImageAccessBuilder",
+      "data": {}
+    },
+    {
+      "name": "PhotoAccess",
+      "pageSourceFile": "src/main/ets/pages/PhotoAccess.ets",
+      "buildFunction": "PhotoAccessBuilder",
+      "data": {}
+    }
+  ]
+}

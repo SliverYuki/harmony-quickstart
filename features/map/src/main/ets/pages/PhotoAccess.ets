@@ -1,6 +1,11 @@
 import { photoAccessHelper } from "@kit.MediaLibraryKit"
 import { BusinessError } from "@kit.BasicServicesKit"
 
+@Builder
+export function PhotoAccessBuilder() {
+  PhotoAccess()
+}
+
 @Component
 export struct PhotoAccess {
   @State imageDatas: string[] = []

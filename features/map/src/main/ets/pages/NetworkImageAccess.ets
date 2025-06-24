@@ -2,13 +2,14 @@ import { http } from '@kit.NetworkKit'
 import { image } from '@kit.ImageKit'
 import { BusinessError } from '@kit.BasicServicesKit'
 
+@Builder
+export function NetworkImageAccessBuilder() {
+  NetworkImageAccess()
+}
+
 @Component
 export struct NetworkImageAccess {
   @State image: PixelMap | undefined = undefined
-
-  aboutToAppear(): void {
-    console.log('NetworkImageAccess', 'appear')
-  }
 
   build() {
     NavDestination() {

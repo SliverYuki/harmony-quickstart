@@ -2,9 +2,6 @@ import { bufferToString } from "utils/src/main/ets/helpers/BufferUtil"
 import { Section } from "../model/KnowledgeClass";
 import { NavBarItemType } from "../model/NavBarClass";
 import { NavBarItem } from "../view/NavBarItem";
-import { KnowledgeMapContent } from "./KnowledgeMapContent";
-import { NetworkImageAccess } from "./NetworkImageAccess";
-import { PhotoAccess } from "./PhotoAccess";
 
 @Component
 export struct KnowledgeMap {
@@ -26,17 +23,6 @@ export struct KnowledgeMap {
 
   @State sections: Array<Section> = []
   @State currentNavBarIndex: number = -1
-
-  @Builder
-  pageMap(name: string) {
-    if (name === 'KnowledgeMapContent') {
-      KnowledgeMapContent({ section: this.sections[this.currentNavBarIndex] })
-    } else if (name === 'PhotoAccess') {
-      PhotoAccess()
-    } else if (name === 'NetworkImageAccess') {
-      NetworkImageAccess()
-    }
-  }
 
   aboutToAppear(): void {
     this.getSectionsDataFromJson()
@@ -71,7 +57,7 @@ export struct KnowledgeMap {
           List({ space: 12 }) {
             ForEach(this.navBarList, (item: NavBarItemType) => {
               ListItem() {
-                NavBarItem({ navBarItem: item, currentNavBarIndex: this.currentNavBarIndex })
+                NavBarItem({ navBarItem: item, ListData: this.sections, currentNavBarIndex: this.currentNavBarIndex })
               }
               .width('100%')
             }, (item: NavBarItemType) => item.order)
@@ -89,7 +75,6 @@ export struct KnowledgeMap {
         .backgroundColor('#F3F5F7')
     }
     .hideTitleBar(false)
-    .navDestination(this.pageMap)
     .mode(NavigationMode.Auto)
   }
 
